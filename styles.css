@@ -1,0 +1,926 @@
+/* Geral */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212; /* Cor de fundo escura */
+    color: #f0f0f0; /* Cor do texto */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    flex-direction: column;
+}
+
+/* Navbar */
+nav {
+    background-color: transparent;
+    padding: 10px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+    border-bottom: 2px solid #ff8c00; /* Borda inferior fina */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f7941d; /* Cor laranja */
+    text-decoration: none; /* Remove o sublinhado */
+    transition: color 0.3s ease, transform 0.3s ease; /* Adiciona transição para interatividade */
+}
+
+.logo:hover {
+    color: #e06d06; /* Cor laranja escuro ao passar o rato */
+    transform: scale(1.1); /* Aumenta o logo levemente */
+}
+
+nav .logo {
+    color: #f0f0f0;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: auto; /* Alinha o logo à esquerda */
+}
+
+ul {
+    display: flex;
+    gap: 20px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #333; /* Cor do texto dos links */
+    font-size: 1rem;
+    transition: color 0.3s ease; /* Adiciona transição para interatividade */
+}
+
+ul li a:hover {
+    color: #f7941d; /* Cor do texto ao passar o rato */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #ff8c00;
+    color: #121212;
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 30vh;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5; /* Ajuste a opacidade conforme necessário */
+}
+
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 45%;
+    left: 11%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    height: 4200px;
+    background-color: #b9733a; /* Quadrado laranja */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 2; /* Fica acima da imagem de fundo */         
+}
+
+/* Conteúdo do Hero */
+.hero-content {
+    position: absolute;
+    top: 54%;
+    left: 11%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+}
+
+.hero-content .logo-box img {
+    width: 1000px; /* Ajuste o tamanho conforme necessário */
+    margin-bottom: 2px;
+}
+
+.logo-container {
+    margin-bottom: 20px;
+    
+}
+
+.logo-box {
+    background-color: #9c572a9c; /* Cor laranja */
+    display: inline-block;
+    padding: 30px;
+    
+    border-radius: 8000px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+}
+
+.logo-box img {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    
+}
+
+.hero-content p {
+    font-size: 24px;
+    font-weight: bold;
+    
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin: 20px 0;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsividade Hero Section */
+@media (max-width: 768px) {
+    .hero {
+        padding: 70px 10px;
+    }
+
+    .hero-content {
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+/* Cardápio */
+.menu {
+    padding: 50px 20px;
+    background-color: #1b1b1b;
+    text-align: center;
+}
+
+.menu h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #ff8c00;
+}
+
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 itens por linha */
+    gap: 20px; /* Espaço entre os itens */
+    justify-items: center; /* Centraliza os itens horizontalmente */
+    margin: 0 auto; /* Centraliza o container */
+    max-width: 1200px; /* Limita a largura máxima do container */
+}
+
+.menu-item {
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.menu-details h3 {
+    font-size: 1.5rem;
+    color: #ff8c00;
+}
+
+.menu-details .price {
+    font-size: 1.2rem;
+    color: #f0f0f0;
+}
+
+/* Responsividade Cardápio */
+@media (max-width: 768px) {
+    .menu-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .menu-item img {
+        height: 150px;
+    }
+}
+
+/* Promoção */
+.menu-promo {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.menu-promo h2 {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.menu-promo p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.menu-promo .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff8c00;
+    color: #121212;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.menu-promo .btn:hover {
+    background-color: #ff8c00;
+}
+
+
+
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .menu-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas para telas médias */
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-container {
+        grid-template-columns: 1fr; /* 1 coluna para telas pequenas */
+    }
+}
+
+
+
+.sushi-item {
+    position: relative;
+    margin: auto;
+    width: 250px; /* Largura ajustável conforme necessário */
+    overflow: hidden; /* Para evitar que a imagem ultrapasse os limites */
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sushi-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Contato */
+.contact {
+    padding: 50px 20px;
+    background-color: #1b1b1b; /* Cor de fundo */
+    color: #f0f0f0; /* Cor do texto */
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.contact-form {
+    flex: 1; /* Ocupar metade do espaço em telas grandes */
+    min-width: 300px; /* Garantir tamanho mínimo */
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 2px solid #333;
+}
+
+.contact-form h2 {
+    font-size: 2.5rem;
+    color: #ff8c00;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #f0f0f0;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #2c2c2c;
+    color: #f0f0f0;
+    font-size: 1rem;
+}
+
+.contact-form input[type="submit"] {
+    background-color: #ff8c00;
+    color: #121212;
+    border: none;
+    cursor: pointer;
+    width: auto;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.contact-form input[type="submit"]:hover {
+    background-color: #e07b00;
+}
+
+/* Localização/Mapa */
+.contact-map {
+    flex: 1; /* Ocupar metade do espaço em telas grandes */
+    min-width: 300px; /* Garantir tamanho mínimo */
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 10px;
+}
+
+.address {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ff8c00; /* Cor do texto da morada */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column; /* Empilha os itens verticalmente */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    .contact-map iframe {
+        height: 250px;
+    }
+
+    .address {
+        font-size: 1.1rem;
+    }
+}
+
+
+/* Galeria de sushis */
+.sushi-gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+.sushi-item {
+    position: relative;
+    width: 200px; /* Ajuste de largura conforme necessário */
+    overflow: hidden; /* Para manter a imagem dentro do contêiner */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sushi-item img {
+    width: 100%;
+    height: auto;
+}
+
+.sushi-item h3, .sushi-item p {
+    margin: 10px;
+}
+
+.sushi-item p {
+    font-size: 1rem;
+    color: #f0f0f0; /* Cor do preço */
+}
+
+.sushi-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .sushi-gallery {
+        flex-direction: column; /* Alinha os itens verticalmente */
+        gap: 20px; /* Ajusta o espaçamento para telas menores */
+    }
+
+    .sushi-item {
+        max-width: 100%; /* Ocupa 100% da largura disponível */
+    }
+}
+
+
+/* Estilo geral da seção "Sobre Nós" */
+.about-us {
+    padding: 50px 20px;
+    background-color: #121212; /* Fundo escuro para estética moderna */
+    color: #f0f0f0; /* Texto claro para contraste */
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+}
+
+/* Container principal */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Texto da seção */
+.about-text {
+    flex: 1;
+    max-width: 600px;
+    text-align: left;
+}
+
+.about-text h2 {
+    font-size: 2.8rem;
+    color: #ff8c00; /* Destaque para o título */
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.about-text strong {
+    color: #ff8c00; /* Destaque para palavras importantes */
+}
+
+.about-text .btn-about {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff8c00;
+    color: #121212;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.about-text .btn-about:hover {
+    background-color: #ff8c00;
+    transform: scale(1.05);
+}
+
+/* Imagem da seção */
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Valores da empresa */
+.about-values {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #1b1b1b; /* Fundo levemente destacado */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.about-values h3 {
+    font-size: 2rem;
+    color: #ff8c00; /* Destaque no título */
+    margin-bottom: 20px;
+}
+
+.about-values ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-values ul li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    line-height: 1.5;
+    color: #f0f0f0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .about-image img {
+        max-width: 90%;
+    }
+
+    .about-values ul {
+        text-align: center;
+    }
+}   
+
+.about-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #121212; /* Fundo escuro */
+    color: #f0f0f0; /* Texto claro */
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+}
+
+.team {
+    padding: 50px 10%;
+    text-align: center;
+    background-color: transparent; /* Fundo da seção transparente */
+}
+
+.team h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #ff8c00; /* Cor do título */
+}
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.team-member {
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra aumentada */
+    overflow: hidden;
+    width: 250px;
+    text-align: center;
+    padding: 10px;
+    background-color: transparent; /* Fundo transparente */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação */
+}
+
+.team-member:hover {
+    transform: scale(1.05); /* Aumenta o tamanho ao passar o rato */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
+}
+
+.team-image img {
+    width: 100%;
+    height: auto; /* Ajusta para não cortar a imagem */
+    border-radius: 50%; /* Faz a imagem circular */
+    border: 4px solid #ff8c00; /* Borda sutil para destacar a imagem */
+}
+
+.team-member h3 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+    color: #ffffff; /* Cor do nome */
+}
+
+.team-member p {
+    color: #ff8c00; /* Cor da descrição */
+}
+
+/* Adiciona responsividade */
+@media (max-width: 768px) {
+    .team-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+footer {
+    text-align: center;
+    background-color: #000; /* Fundo preto */
+    color: #fff; /* Texto branco */
+    padding: 10px 0;
+    position: relative;
+}
+
+/* Barrinha laranja abaixo do rodapé */
+footer::after {
+    content: "";
+    display: block;
+    height: 5px;
+    background-color: #ff8c00; 
+    width: 100%;
+}
+
+section.about {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+
+.testimonials {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #121212; /* Fundo suave para destacar a seção */
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+    color: #FF6600; /* Cor laranja temática */
+    margin-bottom: 20px;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Para ajustar em telas menores */
+}
+
+.testimonial {
+    background: #b9733a;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.client-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.client-comment {
+    font-style: italic;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.stars {
+    color: #FFD700; /* Dourado para as estrelas */
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.client-name {
+    font-weight: bold;
+    color: #555;
+}
+/* Estilo para os botões de navegação */
+.menu-navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn-nav {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f58b42;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-nav:hover {
+    background-color: #d37234;
+    transform: translateY(-2px);
+}
+
+.welcome {
+    text-align: center;
+    background-color: #2e2c2c;
+    padding: 40px 20px;
+    margin: 30px auto;
+    max-width: 1200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.welcome h2 {
+    font-size: 2.5rem;
+    color: #f58b42;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    font-size: 1.2rem;
+    color: #c8c8c8;
+    line-height: 1.6;
+}
+
+.menu-navigation .btn-nav {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #f56a00; /* Cor laranja */
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: transform 0.2s, background-color 0.2s;
+    margin: 0 10px; /* Espaçamento entre botões */
+}
+
+.menu-navigation .btn-nav:hover {
+    background-color: #d35400; /* Cor laranja mais escura */
+    transform: scale(1.1); /* Efeito de aumento */
+}
+
+
+
+.sushi-item img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sushi-item h3 {
+    margin: 10px 0 5px;
+}
+
+.sushi-item p {
+    color: #f56a00; /* Laranja do tema */
+    font-weight: bold;
+}
+
+/* Slider */
+.image-slider {
+    position: relative;
+    max-width: 100%;
+    height: 400px; /* Define uma altura fixa para o slider */
+    overflow: hidden;
+}
+
+.slider-container {
+    position: relative;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%; /* O slide ocupa toda a altura definida pelo container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img {
+    max-width: 100%;
+    max-height: 100%; /* Assegura que a imagem respeite o tamanho do slider */
+    object-fit: cover; /* Corta a imagem para preencher o espaço sem distorcer */
+}
+
+.slider {
+    position: relative;
+    overflow: hidden; /* Garante que o slider funcione bem */
+}
+
+/* Botões de navegação */
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 18px;
+    border-radius: 50%;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+/* Indicadores */
+.slider-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #fff;
+}
+
+
+

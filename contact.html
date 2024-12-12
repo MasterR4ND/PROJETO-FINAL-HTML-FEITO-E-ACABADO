@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatos - Tomushi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">Tomushi</a>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="menu1.html">Menu</a></li>
+            <li><a href="about.html">Sobre Nós</a></li>
+            <li><a href="contact.html">Contato</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="contact">
+            <div class="contact-content">
+                <!-- Formulário à esquerda -->
+                <div class="contact-form">
+                    <h2>Contacte-nos</h2>
+                    <form action="#" method="post">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" name="name" required>
+        
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+        
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+        
+                        <input type="submit" value="Enviar">
+                    </form>
+                </div>
+        
+                <!-- Mapa e endereço à direita -->
+                <div class="contact-map">
+                    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-9.147201538085938,38.71022148441892,-9.136131286621094,38.713720942153895&layer=mapnik&marker=38.711973,-9.141616&icon=marker-red" 
+                            width="100%" height="400px" style="border:0;" allowfullscreen loading="lazy"></iframe>
+                    <p class="address">Rua de Tomar, Lisboa</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tomushi. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
